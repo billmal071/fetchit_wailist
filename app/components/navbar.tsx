@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const scrollToForm = () => {
+    const formSection = document.querySelector('#waitlist-form');
+    formSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -28,32 +29,19 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* Links */}
-            <div className="hidden md:flex gap-6 lg:gap-[30px] text-base lg:text-[22px]">
-              <Link href="#about">About</Link>
-              <Link href="#how-it-works">How it works</Link>
-              <Link href="#testimonials">Testimonials</Link>
-              <Link href="#faqs">FAQs</Link>
-            </div>
-
-            {/* Auth */}
-            <div className="flex items-center gap-4 lg:gap-8">
-              <Link href="/login" className="text-[#6639CA] text-sm lg:text-[22px]">
-                Login
-              </Link>
-              <Link
-                href="/register"
-                className="flex items-center justify-center rounded-full bg-[#6639CA] px-4 py-2 text-sm lg:h-[55px] lg:w-[137px] lg:text-[22px] text-white"
-              >
-                Sign Up
-              </Link>
-            </div>
+            {/* CTA */}
+            <button
+              onClick={scrollToForm}
+              className="flex items-center justify-center rounded-full bg-[#6639CA] px-6 py-2 text-sm lg:h-[55px] lg:px-8 lg:text-[22px] text-white hover:bg-[#5530a8] transition-colors"
+            >
+              Join Waitlist
+            </button>
           </nav>
         </div>
       </div>
 
       {/* ================= MOBILE ================= */}
-      <div className="sm:hidden bg-[#FAF7FF] ">
+      <div className="sm:hidden bg-[#FAF7FF]">
         <nav className="flex items-center justify-between px-4 py-4">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/F_logo.svg" alt="Fetchit logo" width={24} height={24} />
@@ -61,36 +49,12 @@ export default function Navbar() {
           </Link>
 
           <button
-            onClick={() => setOpen(!open)}
-            className="text-black"
-            aria-label="Toggle menu"
+            onClick={scrollToForm}
+            className="rounded-full bg-[#6639CA] px-4 py-2 text-sm text-white hover:bg-[#5530a8] transition-colors"
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            Join Waitlist
           </button>
         </nav>
-
-        {open && (
-          <div className="bg-[#FAF7FF]">
-            <div className="flex flex-col gap-4 px-4 py-6 text-bllack">
-              <Link href="#about" onClick={() => setOpen(false)}>About</Link>
-              <Link href="#how-it-works" onClick={() => setOpen(false)}>How it works</Link>
-              <Link href="#testimonials" onClick={() => setOpen(false)}>Testimonials</Link>
-              <Link href="#faqs" onClick={() => setOpen(false)}>FAQs</Link>
-
-              <div className="pt-4 flex flex-col gap-3">
-                <Link href="/login" className="text-purple-400">
-                  Login
-                </Link>
-                <Link
-                  href="/register"
-                  className="rounded-full bg-purple-600 py-2 text-center text-white"
-                >
-                  Sign Up
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
