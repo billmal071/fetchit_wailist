@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import HeroCircles from "../landing_page/hero_circles";
 import {
-  waitlistSchema,
   userSchema,
   handymanSchema,
   shopperSchema,
