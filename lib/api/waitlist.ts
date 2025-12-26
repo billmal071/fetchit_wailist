@@ -2,7 +2,7 @@ import axios from "axios";
 import { WaitlistFormData } from "@/lib/validations/waitlist";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "/api",
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
