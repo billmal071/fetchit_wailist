@@ -8,6 +8,7 @@ jobs:
   deploy:
     name: Deploy to Ubuntu Server
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
       - name: Deploy to server
