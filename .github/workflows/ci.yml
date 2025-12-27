@@ -97,8 +97,8 @@ jobs:
             # Install dependencies
             pnpm install --frozen-lockfile
 
-            # Restart PM2 process
-            pm2 restart fetchit-waitlist || pm2 start pnpm --name "fetchit-waitlist" -- start
+            # Restart PM2 process using ecosystem file
+            pm2 restart ecosystem.config.js || pm2 start ecosystem.config.js
 
             # Save PM2 process list
             pm2 save
