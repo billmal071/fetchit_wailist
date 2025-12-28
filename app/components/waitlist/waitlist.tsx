@@ -76,27 +76,27 @@ export default function FetchitWaitlistPage() {
   return (
     <div className="w-full min-h-screen bg-white">
       {/* HERO SECTION */}
-      <section className="relative bg-linear-to-br from-black via-[#6639CA] to-black text-white md:h-[815px]">
-        <div className="max-w-screen-2xl mx-auto px-6 py-24 md:pt-[250px] grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative bg-linear-to-br from-black via-[#6639CA] to-black text-white min-h-[auto] md:min-h-[700px] lg:min-h-[815px]">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 py-16 pt-24 sm:py-20 md:pt-[200px] lg:pt-[250px] grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left */}
           <div>
-            <h1 className="text-4xl md:text-[52px] font-medium leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[52px] font-medium leading-tight">
               Find trusted help.
               <br />
               Or earn by offering your skills.
             </h1>
-            <p className="mt-6 text-gray-300 max-w-lg text-[22px]">
+            <p className="mt-4 sm:mt-6 text-gray-300 max-w-lg text-base sm:text-lg md:text-xl lg:text-[22px]">
               Fetchit connects people to reliable handymen and trusted personal shoppers — with secure payments, transparency, and fast payouts.
             </p>
 
-            <div className="mt-10">
+            <div className="mt-6 sm:mt-8 md:mt-10">
               <p className="text-sm uppercase tracking-wide text-gray-400 mb-3">
                 Join Fetchit as
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
                 <button
                   onClick={() => handleRoleSelect("user")}
-                  className={`px-6 py-3 rounded-xl font-normal text-[22px] transition-all ${
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-normal text-sm sm:text-base md:text-lg lg:text-[22px] transition-all ${
                     role === "user"
                       ? "bg-white text-black ring-2 ring-[#FFD101]"
                       : "bg-white text-black hover:opacity-90"
@@ -106,7 +106,7 @@ export default function FetchitWaitlistPage() {
                 </button>
                 <button
                   onClick={() => handleRoleSelect("handyman")}
-                  className={`px-6 py-3 rounded-xl font-normal text-[22px] transition-all ${
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-normal text-sm sm:text-base md:text-lg lg:text-[22px] transition-all ${
                     role === "handyman"
                       ? "bg-[#FFD101] text-black ring-2 ring-white"
                       : "bg-[#FFD101] border-gray-700 hover:bg-[#FFD101]/80 text-black"
@@ -116,7 +116,7 @@ export default function FetchitWaitlistPage() {
                 </button>
                 <button
                   onClick={() => handleRoleSelect("shopper")}
-                  className={`px-6 py-3 rounded-xl font-normal text-[22px] transition-all ${
+                  className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-normal text-sm sm:text-base md:text-lg lg:text-[22px] transition-all ${
                     role === "shopper"
                       ? "bg-[#FFD101] text-black ring-2 ring-white"
                       : "bg-[#FFD101] border border-gray-700 hover:bg-[#FFD101]/80 text-black"
@@ -129,34 +129,34 @@ export default function FetchitWaitlistPage() {
           </div>
 
           {/* Right */}
-          <div className="flex-1 w-full lg:w-auto flex items-center justify-center">
+          <div className="hidden md:flex flex-1 w-full lg:w-auto items-center justify-center">
             <HeroCircles />
           </div>
         </div>
       </section>
 
       {/* WHY JOIN SECTION */}
-      <section className="bg-white py-30 px-6">
+      <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-22">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16">
             Why join Fetchit?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-10 rounded-2xl border bg-[#6639CA]/65">
-              <h3 className="font-bold lg:text-[30px] text-[25px] mb-3 text-white">For Users</h3>
-              <p className="text-white lg:text-[20px] text-[19px] leading-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="p-5 sm:p-6 md:p-8 lg:p-10 rounded-2xl border bg-[#6639CA]/65">
+              <h3 className="font-bold text-xl sm:text-2xl lg:text-[30px] mb-2 sm:mb-3 text-white">For Users</h3>
+              <p className="text-white text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 lg:leading-8">
                 Stop chasing unreliable contacts. Find verified handymen and personal shoppers, see clear pricing, and pay securely through the app.
               </p>
             </div>
-            <div className="p-10 rounded-2xl border bg-[#6639CA]/65">
-              <h3 className="font-bold lg:text-[30px] text-[25px] mb-3 text-white">For Handymen</h3>
-              <p className="text-white lg:text-[20px] text-[19px] leading-8">
+            <div className="p-5 sm:p-6 md:p-8 lg:p-10 rounded-2xl border bg-[#6639CA]/65">
+              <h3 className="font-bold text-xl sm:text-2xl lg:text-[30px] mb-2 sm:mb-3 text-white">For Handymen</h3>
+              <p className="text-white text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 lg:leading-8">
                 Get visibility, steady jobs, and serious customers without stress. Pay only to be listed and keep 100% of what you earn.
               </p>
             </div>
-            <div className="p-10 rounded-2xl border bg-[#6639CA]/65">
-              <h3 className="font-bold lg:text-[30px] text-[25px] mb-3 text-white">For Personal Shoppers</h3>
-              <p className="text-white lg:text-[20px] text-[19px] leading-8">
+            <div className="p-5 sm:p-6 md:p-8 lg:p-10 rounded-2xl border bg-[#6639CA]/65 sm:col-span-2 md:col-span-1">
+              <h3 className="font-bold text-xl sm:text-2xl lg:text-[30px] mb-2 sm:mb-3 text-white">For Personal Shoppers</h3>
+              <p className="text-white text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 lg:leading-8">
                 Accept shopping requests confidently. Customer payments are secured upfront and released immediately after delivery confirmation.
               </p>
             </div>
@@ -165,8 +165,8 @@ export default function FetchitWaitlistPage() {
       </section>
 
       {/* QUESTIONNAIRE SECTION */}
-      <section id="waitlist-form" ref={formRef} className="bg-gray-50 py-20 px-4">
-        <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-6 md:p-10">
+      <section id="waitlist-form" ref={formRef} className="bg-gray-50 py-12 sm:py-16 md:py-20 px-4">
+        <div className="max-w-3xl mx-auto bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 md:p-10">
           {!role && (
             <p className="text-center text-gray-500">
               Select a role above to join the waitlist.
